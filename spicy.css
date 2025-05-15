@@ -1,4 +1,31 @@
-@import url('https://cdn.jsdelivr.net/gh/a-silly-goose/spicy-jelly/spicy.css');
+
+@import url('https://cdn.jsdelivr.net/gh/stpnwf/ZestyTheme@latest/colorschemes/gray.css'); 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap'); body, h1, h2, h3, h4 {font-family: 'Quicksand', sans-serif;}
+.layout-desktop .backgroundContainer {background: url("https://raw.githubusercontent.com/a-silly-goose/spicy-jelly/main/images/gradient%20new.png") no-repeat center center;}
+:root {
+  --white: 243, 242, 243;           /* F3F2F3 */
+  --white-off: 207, 221, 233;       /* CFDDE9 */
+  --jade-green: 0, 172, 111;        /* 00AC6F */
+  --honey-yellow: 255, 194, 85;     /* FFC255 */
+  --cherry-red: 212, 51, 83;        /* D43353 */
+  --imperial-red: 237, 41, 57;      /* ED2939 */
+  --black: 0,0,0;
+}
+:root {
+  --rounding: 8px;
+  --rounding-alt: 9px;
+  --rounding-large: 24px;
+  --rounding-circle: 100px;
+}
+
+/*Style backdrop*/
+.backdropImage {
+  filter: blur(6px) saturate(120%) contrast(120%) brightness(40%);
+}
+.card.show-animation:focus>.cardBox {
+  -webkit-transform:scale(1.1);
+  transform:scale(1.1);
+}
 
 /*Adjusts Home Backdrop*/
 body.withSectionTabs div.backdropImage {
@@ -34,40 +61,25 @@ background-color: rgb(20, 20, 20); filter: brightness(40%);
     rgb(0 0 0 / 0.4) 15%,
     #000000 25%
   );
-}@import url('https://cdn.jsdelivr.net/gh/stpnwf/ZestyTheme@latest/colorschemes/gray.css'); 
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap'); body, h1, h2, h3, h4 {font-family: 'Quicksand', sans-serif;}
-.layout-desktop .backgroundContainer {background: url("https://raw.githubusercontent.com/a-silly-goose/spicy-jelly/main/images/gradient%20new.png") no-repeat center center;}
-:root {
-  --white: 243, 242, 243;           /* F3F2F3 */
-  --white-off: 207, 221, 233;       /* CFDDE9 */
-  --jade-green: 0, 172, 111;        /* 00AC6F */
-  --honey-yellow: 255, 194, 85;     /* FFC255 */
-  --cherry-red: 212, 51, 83;        /* D43353 */
-  --imperial-red: 237, 41, 57;      /* ED2939 */
-}
-:root {
-  --rounding: 8px;
-  --rounding-alt: 9px;
-  --rounding-large: 24px;
-  --rounding-circle: 100px;
 }
 
-/*Style backdrop*/
-.backdropImage {
-  filter: blur(6px) saturate(120%) contrast(120%) brightness(40%);
+/*Adjusts Media Bar Button Order*/
+.button-container {
+  display: flex; /* Enable flex layout */
+  gap: 0.5rem; /* Optional spacing between buttons */
 }
-.card.show-animation:focus>.cardBox {
-  -webkit-transform:scale(1.1);
-  transform:scale(1.1);
+.button-container .btnPlay {
+  order: 1;
 }
-
-/* Featured Bar */
-
-@media only screen and (max-device-width: 767px) {.featurediframe {height: 33vh !important;}}
-
-/*CHANGE HTML BELOW IN SLIDESHOW.HTML TO #ffffff00 TO REMOVE - NEXT TO SHOWCASE
-.featured-content:before 
-  background: #ffffff ; */
+.button-container .detail-button {
+  order: 2;
+}
+.button-container .favorite-button {
+  order: 3;
+}
+.button-container .favorite-button {
+  color: #000000 !important;
+}
 
 /*  ###### Desktop Layout ##### */
 
@@ -281,6 +293,19 @@ button.emby-tab-button:nth-child(3) {
 .layout-desktop .material-icons.detailButton-icon.play_arrow {
   color: rgba(var(--darkest));
 }
+
+/*Removes Buttons On Cards*/
+.cardScalable .more_vert{
+ display:none;
+}
+.emby-button .favorite{
+ display:none;
+}
+.emby-button .playstatebutton-icon-unplayed{
+ display:none;
+}
+
+
 
 .layout-desktop .btnPlay.detailButton {
   flex-direction: row;
@@ -1083,10 +1108,17 @@ progress::-webkit-progress-value {
   border-bottom-right-radius: var(--rounding);
 }
 
-/* rounds and add a dark blur to media cover/thumbs on hover */
+/* Hover on Card dark */
 .cardOverlayContainer {
   border-radius: var(--rounding) !important;
-  background: rgba(var(--accent-off),.42);
+  background: rgba(var(--black),.42);
+}
+
+@font-face {
+    font-family: 'Material Icons Round';
+    font-style: normal;
+    font-weight: 100 700;
+    src: url(https://fonts.gstatic.com/s/materialsymbolsrounded/v230/sykg-zNym6YjUruM-QrEh7-nyTnjDwKNJ_190Fjzag.woff2) format('woff2');
 }
 
 .missingIndicator, 
@@ -1485,12 +1517,12 @@ progress {
 
 
 
-/* Floating progressbar edit - from JellyFlix theme */
+/* Floating progressbar*/
 
 .itemProgressBar {
   backdrop-filter: blur(4px);
   background: rgba(var(--white-off),.35) !important;
-  height: 5px;
+  height: 4px;
   border-radius: 30px;
 }
 
@@ -1658,7 +1690,7 @@ progress {
   background-size: cover !important;
 }
 
-}
+
 #loginPage .squareCard {
     width: 33%;
 }
@@ -1721,9 +1753,9 @@ div.videoOsdBottom.videoOsdBottom-maincontrols {
     
     /* ----- opacity of the buton's background, default 0 -----*/
     /* ----- change this if you want the buttons to have a faint background for better accessibility (recommended value 0.1) -----*/
-    --button-background-opacity: 0;
-    
+    --button-background-opacity: 0;  
   }
+  /*PAUSE BUTTON*/
   div.videoOsdBottom.videoOsdBottom-maincontrols .btnPause {
     position: fixed;
     top: 50%;
@@ -1732,6 +1764,7 @@ div.videoOsdBottom.videoOsdBottom-maincontrols {
     height: calc(var(--btn-size) * var(--play-btn-multiplier));
     transform: translate(-50%, -50%);
   }
+  /*FAST FORWARD*/
   div.videoOsdBottom.videoOsdBottom-maincontrols .btnFastForward {
     position: fixed;
     top: 50%;
@@ -1740,6 +1773,7 @@ div.videoOsdBottom.videoOsdBottom-maincontrols {
     height: var(--btn-size);
     transform: translateY(-50%);
   }
+  /*REWIND*/
   div.videoOsdBottom.videoOsdBottom-maincontrols .btnRewind {
     position: fixed;
     top: 50%;
@@ -1747,6 +1781,10 @@ div.videoOsdBottom.videoOsdBottom-maincontrols {
     width: var(--btn-size);
     height: var(--btn-size);
     transform: translateY(-50%);
+  }
+  /*HIDE FAV BUTTON ON PLAYER*/
+  button[is="emby-ratingbutton"].btnUserRating {
+    display: none !important;
   }
   @media (max-width:50em) {
     div.videoOsdBottom.videoOsdBottom-maincontrols .btnFastForward,
@@ -2322,10 +2360,10 @@ fieldset {
   color: rgba(var(--dark)) !important;
 }
 
-/* hides card overlay buttons (watched, favorites, etc) 
+hides card overlay buttons (watched, favorites, etc) 
 .cardOverlayButton-br {
   display: none;
-} */
+}
 
 /* adjusts card overlay buttons (adds colour)*/
 
@@ -2399,15 +2437,15 @@ fieldset {
 /* Moves TV shows Up Next to bottom right */
 .layout-desktop .nextUpSection {
   border-radius: 34px;
-  margin-left: 66%;
+  margin-left: 62%;
   margin-right: -30vw;
-  margin-top: 15.5vh;
+  margin-top: -13vh; /*Change this if too high*/
   margin-bottom: 1vh;
   padding-left: 2.62em;
   margin-right: 2.5em;
-  background-color: rgba(var(--darkest),.77);
+  background-color: rgba(var(--darkest),.0);
   padding-top: .3em;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(0px);
   position: absolute;
   /* margin-left: 1.5vw; */
 }
@@ -3341,4 +3379,3 @@ margin-bottom: -5px;
     margin-bottom: 0;
   }
 }
-
