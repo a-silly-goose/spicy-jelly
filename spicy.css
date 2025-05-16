@@ -1541,9 +1541,10 @@ progress {
 
 .itemProgressBar {
   backdrop-filter: blur(4px);
-  background: rgba(var(--white-off),.35) !important;
-  height: 4px;
+  background: rgba(var(--black),.35) !important;
+  height: 5px;
   border-radius: 30px;
+
 }
 
 .layout-mobile .itemProgressBar {
