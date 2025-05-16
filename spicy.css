@@ -18,6 +18,18 @@
   --rounding-circle: 100px;
 }
 
+/*Hover play button on cards*/
+.paper-icon-button-light:hover, .paper-icon-button-light:hover:not(:disabled) {
+    background-color: rgba(var(--black), 0.25) !important;
+}
+
+/*Change colour of top bar when selecting cards*/
+.navMenuOption-selected, .selectionCommandsPanel {
+    color: rgba(var(--darkest), 1) !important;
+    background-color: rgba(var(--accent), 0.1) !important;
+    backdrop-filter: blur(4px);
+}
+
 /*Style backdrop*/
 .backdropImage {
   filter: blur(6px) saturate(120%) contrast(120%) brightness(40%);
@@ -1303,12 +1315,20 @@ border-radius: var(--rounding);
 }
 
 .paper-icon-button-light:hover, .paper-icon-button-light:hover:not(:disabled) {
-  background-color: rgba(var(--accent),0.25) !important;
+  background-color: rgba(var(--black),0.25) !important;
 }
 
+.cardOverlayContainer>.cardOverlayFab-primary:hover {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: .2s;
+}
+
+
+
 .cardOverlayFab-primary:hover {
-  -webkit-transform: scale(1.4);
-  transform: scale(1.4);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
   transition: .2s;
 }
 
