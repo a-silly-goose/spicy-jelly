@@ -51,7 +51,7 @@ background-color: rgb(20, 20, 20); filter: brightness(40%);
 .headerCastButton {display: none;}
 .material-icons.person {display: none;}
 .headerButton.headerButtonRight.headerUserButton.paper-icon-button-light {display: none;}
-.sectionTabs {display: none;}
+/*.sectionTabs {display: none;}*/
 .headerHomeButton {display: none;}
 
 /*Adjusts MediaBar Gradient*/
