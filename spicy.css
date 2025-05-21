@@ -18,6 +18,14 @@
   --rounding-circle: 100px;
 }
 
+/*Skip Button Location*/
+.skip-button-container {
+    bottom: -72%;
+    left: 15em;
+    position: relative;
+
+}
+
 /*Hover play button on cards*/
 .paper-icon-button-light:hover, .paper-icon-button-light:hover:not(:disabled) {
     background-color: rgba(var(--black), 0.25) !important;
