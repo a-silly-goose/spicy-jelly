@@ -18,14 +18,6 @@
   --rounding-circle: 100px;
 }
 
-/*Skip Button Location*/
-.skip-button-container {
-    bottom: -72%;
-    left: 15em;
-    position: relative;
-
-}
-
 /*Hover play button on cards*/
 .paper-icon-button-light:hover, .paper-icon-button-light:hover:not(:disabled) {
     background-color: rgba(var(--black), 0.25) !important;
@@ -220,7 +212,7 @@ button.emby-tab-button:nth-child(3) {
 /* Hides track selection box */
 
 .trackSelections {
-    display: none;
+/*    display: none;*/
 }
 
 /* hides movie name only when there is a logo - from Zombie */
@@ -2219,16 +2211,16 @@ fieldset {
 
 .emby-select-withcolor:focus {
   border-color: rgba(var(--accent),.9) !important;
-  background-color: rgba(var(--darkest)) !important;
+  background-color: rgba(0, 0, 0, .2) !important;
 }
 
 .emby-select-withcolor {
-  background-color: rgba(var(--darkest)) !important;
+  background-color: rgba(0, 0, 0, .2) !important;
   color: white;
 }
 
 .emby-input {
-  background-color: rgba(var(--darkest)) !important;
+  background-color: rgba(0, 0, 0, .2) !important;
   color: white;
 }
 
@@ -2558,7 +2550,7 @@ hides card overlay buttons (watched, favorites, etc)
 
 .layout-mobile .itemTags,
 .layout-mobile .itemName.originalTitle,
-.layout-mobile .trackSelections,
+/*.layout-mobile .trackSelections,*/
 .layout-mobile .itemExternalLinks,
 .layout-mobile .writersGroup,
 .layout-mobile .studiosGroup,
