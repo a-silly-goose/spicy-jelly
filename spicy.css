@@ -1792,7 +1792,7 @@ progress {
 } */
 
 
-/*centred media controls
+/*centred media controls*/
 div.videoOsdBottom.videoOsdBottom-maincontrols {
       
     /* ----- If you want bigger or smaller buttons, change these -----*/
@@ -1808,7 +1808,7 @@ div.videoOsdBottom.videoOsdBottom-maincontrols {
     --play-btn-multiplier: 1.5;
     
     /* ----- opacity of the buton's background, default 0 -----*/
-    /* ----- change this if you want the buttons to have a faint background for better accessibility (recommended value 0.1) -----
+    /* ----- change this if you want the buttons to have a faint background for better accessibility (recommended value 0.1) -----*/
     --button-background-opacity: 0;  
   } 
   /*PAUSE BUTTON
