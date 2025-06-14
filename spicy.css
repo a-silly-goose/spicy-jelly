@@ -1792,26 +1792,26 @@ progress {
 } */
 
 
-/*centred media controls*/
+/*centred media controls
 div.videoOsdBottom.videoOsdBottom-maincontrols {
       
     /* ----- If you want bigger or smaller buttons, change these -----*/
     /* ----- please use vw values so they will scale with the window autoamtically -----*/
     /* ----- as you increase the sizes, decreaes the offset -----*/
-    /* ----- and as you decrease the sizes, increase the offset -----*/
+    /* ----- and as you decrease the sizes, increase the offset -----
     --btn-size: 4vw;
     --font-size: 3vw;
     --ff-rw-offset: 35%;
     
     /* ----- set this to 1 if you want your buttons the same size ----- */
-    /* ----- The larger the value, the bigger the play button relative to the ff/rw buttons ----- */
+    /* ----- The larger the value, the bigger the play button relative to the ff/rw buttons ----- 
     --play-btn-multiplier: 1.5;
     
     /* ----- opacity of the buton's background, default 0 -----*/
-    /* ----- change this if you want the buttons to have a faint background for better accessibility (recommended value 0.1) -----*/
+    /* ----- change this if you want the buttons to have a faint background for better accessibility (recommended value 0.1) -----
     --button-background-opacity: 0;  
-  }
-  /*PAUSE BUTTON*/
+  } 
+  /*PAUSE BUTTON
   div.videoOsdBottom.videoOsdBottom-maincontrols .btnPause {
     position: fixed;
     top: 50%;
@@ -1820,7 +1820,7 @@ div.videoOsdBottom.videoOsdBottom-maincontrols {
     height: calc(var(--btn-size) * var(--play-btn-multiplier));
     transform: translate(-50%, -50%);
   }
-  /*FAST FORWARD*/
+  /*FAST FORWARD
   div.videoOsdBottom.videoOsdBottom-maincontrols .btnFastForward {
     position: fixed;
     top: 50%;
@@ -1829,7 +1829,7 @@ div.videoOsdBottom.videoOsdBottom-maincontrols {
     height: var(--btn-size);
     transform: translateY(-50%);
   }
-  /*REWIND*/
+  /*REWIND
   div.videoOsdBottom.videoOsdBottom-maincontrols .btnRewind {
     position: fixed;
     top: 50%;
