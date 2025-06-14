@@ -1798,13 +1798,13 @@ div.videoOsdBottom.videoOsdBottom-maincontrols {
     /* ----- If you want bigger or smaller buttons, change these -----*/
     /* ----- please use vw values so they will scale with the window autoamtically -----*/
     /* ----- as you increase the sizes, decreaes the offset -----*/
-    /* ----- and as you decrease the sizes, increase the offset -----
+    /* ----- and as you decrease the sizes, increase the offset ----- */
     --btn-size: 4vw;
     --font-size: 3vw;
     --ff-rw-offset: 35%;
     
     /* ----- set this to 1 if you want your buttons the same size ----- */
-    /* ----- The larger the value, the bigger the play button relative to the ff/rw buttons ----- 
+    /* ----- The larger the value, the bigger the play button relative to the ff/rw buttons ----- */
     --play-btn-multiplier: 1.5;
     
     /* ----- opacity of the buton's background, default 0 -----*/
