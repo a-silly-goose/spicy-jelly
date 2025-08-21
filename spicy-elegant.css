@@ -250,24 +250,44 @@
 /*CHANGES THE MARKED AS PLAYED*/
 /* Rounded corner background box behind the check mark */
 .playedIndicator.indicator {
-  background-color: rgba(15, 22, 36, 0.5) !important;   /* Green background color */
-  padding: 6px 6px !important;             /* Space around the check mark */
-  border-radius: 6px !important;           /* Rounded corners */
+  background-color: rgba(15, 22, 36, 0.5) !important;
+  padding: 0 !important;                /* Remove padding for fixed size */
+  border-radius: 6px !important;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: fit-content;
-  height: fit-content;
+  width: 26px !important;               /* Fixed width */
+  height: 26px !important;              /* Fixed height */
+  box-sizing: border-box;
 }
 
 /* Style the check mark icon */
 .playedIndicator.indicator .indicatorIcon.check {
-  color: rgba(0,187,119) !important;                  /* White tick */
-  font-size: 18px !important;               /* Adjust size as needed */
+  color: rgba(0, 187, 119) !important;
+  font-size: 18px !important;
   background: none !important;
   box-shadow: none !important;
   border: none !important;
   padding: 0 !important;
+  margin: auto;   /* Center the icon */
+}
+
+/*CHANGES COUNT INDICATOR*/
+/* Style the count indicator circle like the played indicator */
+.cardIndicators .countIndicator.indicator {
+  background-color: rgba(15, 22, 36, 0.5) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  padding: 0 !important;                /* Remove padding for fixed size */
+  border-radius: 6px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  width: 26px !important;
+  height: 26px !important;
+  box-sizing: border-box;
+  font-size: 14px !important;
+  user-select: none;
 }
 
 
