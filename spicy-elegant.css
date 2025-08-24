@@ -291,7 +291,7 @@
 }
 
 /*CHANGES VERTICAL ORDER OF PLAYBACK BAR AND CONTROLS*/
-/* === OSD Controls Wrapper === */
+/* OSD Controls Wrapper */
 .osdControls {
     position: relative !important;  /* anchor to bottom of player */
     bottom: 0 !important;           /* stick at bottom edge */
@@ -301,37 +301,37 @@
     flex-direction: column;
     box-sizing: border-box;
 
-    /* 🔧 Edge Padding (adjust these as you like) */
+    /* Edge Padding (adjust these as you like) */
     padding: 20px 40px 0px 40px !important;
     /* order: top | right | bottom | left
        increase bottom padding if too close to edge
        reduce top padding to bring bar lower */
 }
 
-/* === Timeline / seekbar row === */
+/* Timeline / seekbar row */
 .osdControls > .flex.flex-direction-row.align-items-center {
     order: -1;              /* move above controls */
     position: relative;
     z-index: 5;
 
-    /* 🔧 Row gap under timeline */
+    /* Row gap under timeline */
     margin-bottom: 0 !important;   /* set to e.g. 4px if you want a gap */
     padding-bottom: 0 !important;
 }
 
-/* === Button row (play/pause, volume, settings, etc.) === */
+/* Button row (play/pause, volume, settings, etc.) */
 .osdControls > .buttons.focuscontainer-x {
     order: 0;                /* sits below the slider row */
     position: relative !important;
     bottom: auto !important;
     z-index: 1;
 
-    /* 🔧 Row gap above buttons */
+    /* Row gap above buttons */
     margin-top: 0 !important;   /* set to e.g. 4px if you want a gap */
     padding-top: 0 !important;
 }
 
-/* === Extra tweak: remove unintended spacing in sub-elements === */
+/* Extra tweak: remove unintended spacing in sub-elements */
 .osdControls .sliderContainer,
 .osdControls .osdTextContainer {
     margin: 0 !important;
