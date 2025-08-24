@@ -273,6 +273,24 @@
 }
 
 /*CHANGES COUNT INDICATOR*/
+/* Style the count indicator circle like the played indicator */
+.cardIndicators .countIndicator.indicator {
+  background-color: rgba(15, 22, 36, 0.5) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  padding: 0 !important;                /* Remove padding for fixed size */
+  border-radius: 6px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  width: 26px !important;
+  height: 26px !important;
+  box-sizing: border-box;
+  font-size: 14px !important;
+  user-select: none;
+}
+
+/*CHANGES VERTICAL ORDER OF PLAYBACK BAR AND CONTROLS*/
 /* === OSD Controls Wrapper === */
 .osdControls {
     position: relative !important;  /* anchor to bottom of player */
@@ -319,7 +337,6 @@
     margin: 0 !important;
     padding: 0 !important;
 }
-
 
 
 
