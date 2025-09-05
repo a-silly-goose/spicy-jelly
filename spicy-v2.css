@@ -15,14 +15,14 @@
     mask-image: linear-gradient(
         to bottom,
         #000 0%,
-        #000 70%,
-        #0000 82%
+        #00000080 60%,
+        #0000 90%
     );
     -webkit-mask-image: linear-gradient(
         to bottom,
         #000 0%,
-        #000 70%,
-        #0000 82%
+        #00000080 60%,
+        #0000 90%
     );
 }
 
@@ -68,6 +68,8 @@
 .button-container .favorite-button:hover {
   background: rgba(128, 128, 128, 0.3);
 }
+
+
 
 /*PLAYBACK CONTROLS*/
 /* Hide chapter markers on playback progress bar */
@@ -336,4 +338,9 @@
 .osdControls .osdTextContainer {
     margin: 0 !important;
     padding: 0 !important;
+}
+
+/*Hide the "Trailers" tab in Movies*/
+.mainDrawer:has(.navMenuOption-selected[href^="#/movies.html"]) + .skinHeader .emby-tab-button[data-index="2"] {
+display: none !important;
 }
