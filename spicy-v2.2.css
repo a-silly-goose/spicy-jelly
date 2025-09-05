@@ -14,10 +14,22 @@
     transparent 95%
   ) !important;
 }
-
 /*Adjusts the blur amount of the header*/
 .skinHeader-blurred:not(.osdHeader):not(.semiTransparent)::after {
     backdrop-filter: blur(4px) !important;
+}
+/*Custom Logo*/
+:root {
+  --customlogo: url("https://i.imgur.com/F3Oqufi.png"); /*Place Custom Logo Link here*/
+}
+.adminDrawerLogo img { 
+  content: var(--customlogo) !important; 
+} 
+imgLogoIcon { 
+  content: var(--customlogo) !important; 
+} 
+.pageTitleWithLogo { 
+  background-image: var(--customlogo) !important; 
 }
 
 /*MISC*/
