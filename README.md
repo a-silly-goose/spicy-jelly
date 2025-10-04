@@ -5,5 +5,5 @@
 ```
 
 ```
-@import url('https://cdn.jsdelivr.net/gh/a-silly-goose/spicy-jelly@main/spicy-v2.2.css');
+@import url('https://cdn.jsdelivr.net/gh/a-silly-goose/spicy-jelly@main/spicy-v2.3.css');
 ```
