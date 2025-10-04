@@ -19,8 +19,8 @@
     backdrop-filter: blur(4px) !important;
 }
 /*Custom Logo*/
-:root {
-  --customlogo: url("https://i.imgur.com/9fpMN1b.png"); /*Place Custom Logo Link here*/
+/*:root {
+  --customlogo: url("https://i.imgur.com/9fpMN1b.png"); /*Place Custom Logo Link here
 }
 .adminDrawerLogo img { 
   content: var(--customlogo) !important; 
@@ -30,7 +30,7 @@ imgLogoIcon {
 } 
 .pageTitleWithLogo { 
   background-image: var(--customlogo) !important; 
-}
+} */
 
 /*MISC*/
 /*Removes Scrollbar*/
