@@ -99,6 +99,15 @@ imgLogoIcon {
   background: rgba(128, 128, 128, 0.3);
 }
 
+/*Fixes the header on 10.11*/
+#slides-container {
+    position: static;
+    width: 100vw;
+    height: 90%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
 /*PLAYBACK CONTROLS*/
 /* Hide chapter markers on playback progress bar */
 .sliderMarker {
