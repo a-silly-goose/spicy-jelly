@@ -35,10 +35,9 @@ imgLogoIcon {
 div[is="emby-tabs"][data-index="0"] {
   display: none !important;
 }
-#customTabButton_0 {
+div.emby-tabs[data-index="3"] {
   display: none !important;
 }
-
 
 /*MISC*/
 /*Removes Scrollbar*/
@@ -81,7 +80,6 @@ div[is="emby-tabs"][data-index="0"] {
   order: 1;
   /* Adjust border-radius if needed for pill shape */
 }
-
 /* Detail Button — Circular, Order 2 */
 .button-container .detail-button {
   order: 2;
@@ -95,7 +93,6 @@ div[is="emby-tabs"][data-index="0"] {
   padding: 0;
   box-sizing: border-box;
 }
-
 /* Favorite Button — Circular, Order 3 */
 .button-container .favorite-button {
   order: 3;
@@ -110,7 +107,6 @@ div[is="emby-tabs"][data-index="0"] {
   box-sizing: border-box;
   color: #000000 !important;
 }
-
 /* Watchlist Button — Circular, Order 4, Consistent Size */
 .button-container .watchlist-button {
   order: 4;
@@ -142,8 +138,6 @@ div[is="emby-tabs"][data-index="0"] {
     box-shadow: none !important;
 }
 
-
-
 .button-container .watchlist-button::before,
 .button-container .watchlist-button::after {
   content: none !important;
@@ -151,8 +145,6 @@ div[is="emby-tabs"][data-index="0"] {
   box-shadow: none !important;
   border: none !important;
 }
-
-
 
   /* Inherit or override styles for visual consistency */
   border: none;
