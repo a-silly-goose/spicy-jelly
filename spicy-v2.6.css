@@ -35,6 +35,9 @@ imgLogoIcon {
 div[is="emby-tabs"][data-index="0"] {
   display: none !important;
 }
+#customTabButton_0 {
+  display: none !important;
+}
 
 
 /*MISC*/
