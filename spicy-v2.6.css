@@ -19,8 +19,8 @@
     backdrop-filter: blur(4px) !important;
 }
 /*Custom Logo*/
-/*:root {
-  --customlogo: url("https://i.imgur.com/9fpMN1b.png"); /*Place Custom Logo Link here
+:root {
+  --customlogo: url("https://raw.githubusercontent.com/a-silly-goose/spicy-jelly/refs/heads/main/images/The%20Vault.png"); /*Place Custom Logo Link here*/
 }
 .adminDrawerLogo img { 
   content: var(--customlogo) !important; 
@@ -30,7 +30,12 @@ imgLogoIcon {
 } 
 .pageTitleWithLogo { 
   background-image: var(--customlogo) !important; 
-} */
+} 
+/*Hides Home/Fav Header Buttons*/
+div[is="emby-tabs"][data-index="0"] {
+  display: none !important;
+}
+
 
 /*MISC*/
 /*Removes Scrollbar*/
@@ -61,33 +66,97 @@ imgLogoIcon {
         #0000 90%
     );
 }
-/*Adjusts Media Bar Button Order and Alignment*/
+/* Media Bar Button Flex Layout & Sizing */
 .button-container {
   display: flex;
   gap: 0.5rem;
   align-items: center;
 }
+
+/* Play Button — Pill Shape, Order 1 */
 .button-container .btnPlay {
   order: 1;
-  /* If you want this one to stay as a pill shape, leave as-is or set border-radius lower */
+  /* Adjust border-radius if needed for pill shape */
 }
-.button-container .detail-button,
-.button-container .favorite-button {
-  order: 2; /* detail-button */
-  order: 3; /* favorite-button */
+
+/* Detail Button — Circular, Order 2 */
+.button-container .detail-button {
+  order: 2;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%; /* Makes these circular! */
+  border-radius: 50%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Favorite Button — Circular, Order 3 */
 .button-container .favorite-button {
+  order: 3;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   color: #000000 !important;
 }
+
+/* Watchlist Button — Circular, Order 4, Consistent Size */
+.button-container .watchlist-button {
+  order: 4;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+/*Watchlist Button Customisation*/
+.button-container .watchlist-button,
+.button-container .watchlist-button:focus,
+.button-container .watchlist-button:active,
+.button-container .watchlist-button:hover,
+.button-container .watchlist-button[data-active="true"],
+.button-container .watchlist-button.selected {
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* If the icon itself has a background (e.g., SVG or span inside) */
+.button-container .watchlist-button * {
+    background: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+
+
+.button-container .watchlist-button::before,
+.button-container .watchlist-button::after {
+  content: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+
+
+  /* Inherit or override styles for visual consistency */
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
 /*Customising the Media Bar Buttons*/
 .button-container .favorite-button {
   background: transparent !important;
