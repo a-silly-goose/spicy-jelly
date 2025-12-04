@@ -163,6 +163,11 @@ div.emby-tabs[data-index="3"] {
   background: rgba(128, 128, 128, 0.3);
 }
 
+/*Text colour for age rating*/
+.age-rating {
+    color: #ffffff;
+}
+
 /*Fixes the header on 10.11*/
 #slides-container {
     position: static;
