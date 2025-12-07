@@ -5,6 +5,22 @@
 
 /*CUSTOM CSS*/
 
+/*BACKGROUND*/
+:root {
+  --darkerGradientPoint: rgb(20, 20, 20);   
+  --lighterGradientPoint: rgb(26, 26, 26); 
+  --darkerGradientPointAlpha: rgb(20, 20, 20, 0.85);
+  --lighterGradientPointAlpha: rgb(26, 26, 26, 0.85);
+}
+
+.element {
+  --backgroundGradient: linear-gradient(
+    0deg,
+    var(--darkerGradientPoint) 35%,
+    var(--lighterGradientPoint)
+  );
+  background: var(--backgroundGradient);
+}
 /*HEADER*/
 /*Adjusts the opacity of the header gradient*/
 :root {
