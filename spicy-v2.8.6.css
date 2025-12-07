@@ -5,12 +5,19 @@
 
 /*CUSTOM CSS*/
 
-/*BACKGROUND*/
+/*COLOURS*/
 :root {
-  --darkerGradientPoint: rgb(20, 20, 20);   
-  --lighterGradientPoint: rgb(26, 26, 26); 
-  --darkerGradientPointAlpha: rgb(20, 20, 20, 0.85);
-  --lighterGradientPointAlpha: rgb(26, 26, 26, 0.85);
+  --darkerGradientPoint: rgb(20, 20, 20);  /*Background colour #1*/ 
+  --lighterGradientPoint: rgb(26, 26, 26); /*Background colour #2*/ 
+  --darkerGradientPointAlpha: rgb(20, 20, 20, 0.85); /*Background colour #3*/ 
+  --lighterGradientPointAlpha: rgb(26, 26, 26, 0.85); /*Background colour #4*/ 
+  --selectorBackgroundColor: rgb(36, 36, 36); /*Right Click menu*/
+  --highlightOutlineColor: rgb(255, 255, 255); /*Border colour for above*/
+  --drawerColor: rgba(46, 46, 46, 0.9); /*Large Popups*/
+  --headerColor: rgba(39, 39, 39, 0.8); /*Header of popups*/
+  --borderColor: hsl(0, 0%, 32%); /*Border colour for above*/
+  --btnMiniPlayColor: rgba(65, 65, 65, 0.7) !important; /*Play button colour*/
+  --btnMiniPlayBorderColor: rgba(121, 121, 121, 0.7) !important; /*Play button colour*/
 }
 
 .element {
@@ -264,11 +271,7 @@ div.emby-tabs[data-index="3"] {
 .card, .itemActionCard, .anyCardContainerClass {
   position: relative !important;
 }
-/* Changes the colour of the play button circle */
-:root {
-  --btnMiniPlayColor: rgba(24, 34, 56, 0.7) !important;         /* Circle background colour */
-  --btnMiniPlayBorderColor: rgba(28, 41, 71, 0.7) !important;   /* Circle border colour */
-}
+
 .cardOverlayFab-primary .cardOverlayButtonIcon {
   color: rgba(255, 255, 255, 0.8) !important; /*Triangle colour*/
 }
