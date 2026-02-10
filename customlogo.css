@@ -1,0 +1,4 @@
+/* Custom logo URL */
+:root {
+  --customlogo: url("https://raw.githubusercontent.com/a-silly-goose/spicy-jelly/refs/heads/main/images/The%20Vault.png");
+}
