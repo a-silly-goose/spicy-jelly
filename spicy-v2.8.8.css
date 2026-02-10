@@ -434,6 +434,29 @@ div.emby-tabs[data-index="3"] {
   transform: scale(1.5);
 }
 
+/* Fixes Episodes On Series Page in KefinTweaks */
+#itemDetailPage .emby-scroller-container {
+    padding: 0 2em;           /* Creates space to hide scroll edges */
+    overflow: hidden;
+    width: 390%;
+}
+#itemDetailPage .scrollX {
+    width: calc(100% + 4em);  /* Wider than container by padding amount */
+    margin: 0 -2em;           /* Negative margin = exactly padding width */
+    overflow-x: auto;
+}
+
+/* Distance between Episode Carousel and Genre Info */
+.layout-desktop .detailSectionContent {
+    display: grid;
+    align-content: end;
+    min-height: 0vh !important;
+}
+
+/* Fixes Season text being overlapped by show logo */
+* .subtitle {
+    padding-bottom: 0 !important;
+}
 
 /* ============================================================
    7. INDICATORS – PLAYED & COUNT
