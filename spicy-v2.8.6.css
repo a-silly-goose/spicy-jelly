@@ -69,9 +69,9 @@
 }
 
 /* Custom logo URL */
-/*:root {
+:root {
   --customlogo: url("https://raw.githubusercontent.com/a-silly-goose/spicy-jelly/refs/heads/main/images/The%20Vault.png");
-}*/
+}
 
 /* Use custom logo in various header places */
 .adminDrawerLogo img {
@@ -256,6 +256,10 @@ div.emby-tabs[data-index="3"] {
 .pause-button {
   transform: translateY(20px) !important; /* Moves it down regardless of positioning */
 }
+/*Adjusts volume button location*/
+.volume-toggle {
+  transform: translateY(20px) !important; /* Moves it down regardless of positioning */
+}
 
 /* Lower the first card carousel under the media bar */
 .verticalSection.ContinueWatchingNextUp.section0.emby-scroller-container {
@@ -344,7 +348,6 @@ div.emby-tabs[data-index="3"] {
 .cardOverlayFab-primary .cardOverlayButtonIcon {
   color: rgba(255, 255, 255, 0.8) !important;
 }
-
 
 /* ============================================================
    6. SEASON PAGE – EPISODE CARD SIZE & HOVER BEHAVIOUR
