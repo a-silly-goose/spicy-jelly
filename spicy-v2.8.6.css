@@ -69,9 +69,9 @@
 }
 
 /* Custom logo URL */
-:root {
+/*:root {
   --customlogo: url("https://raw.githubusercontent.com/a-silly-goose/spicy-jelly/refs/heads/main/images/The%20Vault.png");
-}
+}*/
 
 /* Use custom logo in various header places */
 .adminDrawerLogo img {
