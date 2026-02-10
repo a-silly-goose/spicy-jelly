@@ -3,23 +3,36 @@
 /* ElegantFin Theme LATEST for Jellyfin by lscambo13 */
 @import url("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css");
 
-/*CUSTOM CSS*/
+/* ============================================================
+   CUSTOM CSS – SPICY JELLY (ELEGANTFIN ADD-ONS ONLY)
+   ============================================================ */
 
-/*COLOURS*/
+
+/* ============================================================
+   1. COLOURS & GLOBAL THEME OVERRIDES
+   - Background gradients
+   - Menu / drawer / popup colours
+   - Mini play button colours
+   ============================================================ */
+
 :root {
-  --darkerGradientPoint: rgb(20, 20, 20);  /*Background colour #1*/ 
-  --lighterGradientPoint: rgb(26, 26, 26); /*Background colour #2*/ 
-  --darkerGradientPointAlpha: rgb(20, 20, 20, 0.85); /*Background colour #3*/ 
-  --lighterGradientPointAlpha: rgb(26, 26, 26, 0.85); /*Background colour #4*/ 
-  --selectorBackgroundColor: rgb(36, 36, 36); /*Right Click menu*/
-  --highlightOutlineColor: rgb(255, 255, 255); /*Border colour for above*/
-  --drawerColor: rgba(46, 46, 46, 0.9); /*Large Popups*/
-  --headerColor: rgba(39, 39, 39, 0.8); /*Header of popups*/
-  --borderColor: hsl(0, 0%, 32%); /*Border colour for above*/
-  --btnMiniPlayColor: rgba(65, 65, 65, 0.7) !important; /*Play button colour*/
-  --btnMiniPlayBorderColor: rgba(121, 121, 121, 0.7) !important; /*Play button colour*/
+  --darkerGradientPoint: rgb(20, 20, 20);                 /* Background colour #1 */
+  --lighterGradientPoint: rgb(26, 26, 26);                /* Background colour #2 */
+  --darkerGradientPointAlpha: rgb(20, 20, 20, 0.85);      /* Background colour #3 */
+  --lighterGradientPointAlpha: rgb(26, 26, 26, 0.85);     /* Background colour #4 */
+
+  --selectorBackgroundColor: rgb(36, 36, 36);             /* Right-click menu background */
+  --highlightOutlineColor: rgb(255, 255, 255);            /* Outline / border for above */
+
+  --drawerColor: rgba(46, 46, 46, 0.9);                   /* Large popups / drawers */
+  --headerColor: rgba(39, 39, 39, 0.8);                   /* Popup headers */
+  --borderColor: hsl(0, 0%, 32%);                         /* Border colour for drawers, headers */
+
+  --btnMiniPlayColor: rgba(65, 65, 65, 0.7) !important;   /* Mini play button colour */
+  --btnMiniPlayBorderColor: rgba(121, 121, 121, 0.7) !important; /* Mini play border colour */
 }
 
+/* Global background gradient for main elements */
 .element {
   --backgroundGradient: linear-gradient(
     0deg,
@@ -28,10 +41,20 @@
   );
   background: var(--backgroundGradient);
 }
-/*HEADER*/
-/*Adjusts the opacity of the header gradient*/
+
+
+/* ============================================================
+   2. HEADER – GRADIENT, BLUR & LOGO
+   - Header gradient opacity
+   - Blur for header
+   - Custom logo in multiple header locations
+   - Hiding header tabs (Home / Favorites)
+   ============================================================ */
+
+/* Adjust header gradient opacity */
 :root {
-  --headerColorGradient: linear-gradient(180deg,
+  --headerColorGradient: linear-gradient(
+    180deg,
     rgba(24, 24, 24, 0.85) 20%,
     rgba(24, 24, 24, 0.6) 40%,
     rgba(24, 24, 24, 0.4) 60%,
@@ -39,73 +62,93 @@
     transparent 95%
   ) !important;
 }
-/*Adjusts the blur amount of the header*/
+
+/* Adjust header blur amount */
 .skinHeader-blurred:not(.osdHeader):not(.semiTransparent)::after {
-    backdrop-filter: blur(4px) !important;
+  backdrop-filter: blur(4px) !important;
 }
-/*Custom Logo*/
+
+/* Custom logo URL */
 :root {
-  --customlogo: url("https://raw.githubusercontent.com/a-silly-goose/spicy-jelly/refs/heads/main/images/The%20Vault.png"); /*Place Custom Logo Link here*/
+  --customlogo: url("https://raw.githubusercontent.com/a-silly-goose/spicy-jelly/refs/heads/main/images/The%20Vault.png");
 }
-.adminDrawerLogo img { 
-  content: var(--customlogo) !important; 
-} 
-imgLogoIcon { 
-  content: var(--customlogo) !important; 
-} 
-.pageTitleWithLogo { 
-  background-image: var(--customlogo) !important; 
-} 
-/*Hides Home/Fav Header Buttons*/
-div[is="emby-tabs"][data-index="0"] {
-  display: none !important;
+
+/* Use custom logo in various header places */
+.adminDrawerLogo img {
+  content: var(--customlogo) !important;
 }
+
+imgLogoIcon {
+  content: var(--customlogo) !important;
+}
+
+.pageTitleWithLogo {
+  background-image: var(--customlogo) !important;
+}
+
+/* Hide Home / Fav header buttons */
+div[is="emby-tabs"][data-index="0"],
 div.emby-tabs[data-index="3"] {
   display: none !important;
 }
 
-/*MISC*/
-/*Removes Scrollbar*/
+
+/* ============================================================
+   3. MISC GLOBAL TWEAKS
+   - Scrollbar visibility
+   ============================================================ */
+
+/* Removes scrollbar (set to 'thin' if you prefer a slim bar) */
 * {
-    scrollbar-width: none; /*Replace none with thin for scrollbar*/
-    scrollbar-color: #3b3b3b #202020;
+  scrollbar-width: none;
+  scrollbar-color: #3b3b3b #202020;
 }
 
-/*MEDIA BAR*/
-/*Adjusts MediaBar Gradient*/
+
+/* ============================================================
+   4. MEDIA BAR – BACKDROP & BUTTON LAYOUT
+   - Backdrop gradient mask
+   - Media bar action buttons layout and styling
+   - Age rating colour
+   - Header fix for specific version
+   ============================================================ */
+
+/* Adjusts media bar backdrop gradient/mask */
 .backdrop-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 
-    mask-image: linear-gradient(
-        to bottom,
-        #000 0%,
-        #00000080 60%,
-        #0000 90%
-    );
-    -webkit-mask-image: linear-gradient(
-        to bottom,
-        #000 0%,
-        #00000080 60%,
-        #0000 90%
-    );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #00000080 60%,
+    #0000 90%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #00000080 60%,
+    #0000 90%
+  );
 }
-/* Media Bar Button Flex Layout & Sizing */
+
+/* Media bar button flex layout */
 .button-container {
   display: flex;
   gap: 0.5rem;
   align-items: center;
 }
 
-/* Play Button — Pill Shape, Order 1 */
+/* Play button — pill-like, first in order */
 .button-container .btnPlay {
   order: 1;
-  /* Adjust border-radius if needed for pill shape */
+  /* Adjust border-radius here if you want a more pill-like shape */
 }
-/* Detail Button — Circular, Order 2 */
+
+/* Detail button — circular */
 .button-container .detail-button {
   order: 2;
   width: 40px;
@@ -118,7 +161,29 @@ div.emby-tabs[data-index="3"] {
   padding: 0;
   box-sizing: border-box;
 }
-/* Favorite Button — Circular, Order 3 */
+.button-container .detail-button:hover {
+  color: rgba(128, 128, 128, 1)!important; 
+}
+
+/* Detail button – remove all backgrounds / shadows in all states */
+.button-container .detail-button,
+.button-container .detail-button:focus,
+.button-container .detail-button:active,
+.button-container .detail-button:hover,
+.button-container .detail-button[data-active="true"],
+.button-container .detail-button.selected {
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Customising the media bar favourite button */
+.button-container .favorite-button {
+ /* display: none !important; /*Change to make favourite button visible*/
+}
+
+/* Favorite button — circular white heart */
 .button-container .favorite-button {
   order: 3;
   width: 40px;
@@ -130,9 +195,26 @@ div.emby-tabs[data-index="3"] {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #000000 !important;
+  color: #ffffff !important;
 }
-/* Watchlist Button — Circular, Order 4, Consistent Size */
+.button-container .favorite-button:hover {
+  color: rgba(128, 128, 128, 1)!important; 
+}
+
+/* Favorite button – remove all backgrounds / shadows in all states */
+.button-container .favorite-button,
+.button-container .favorite-button:focus,
+.button-container .favorite-button:active,
+.button-container .favorite-button:hover,
+.button-container .favorite-button[data-active="true"],
+.button-container .favorite-button.selected {
+  background: none !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Watchlist button — circular, consistent size, COLOUR CHANGE ON HOVER */
 .button-container .watchlist-button {
   order: 4;
   width: 40px;
@@ -144,120 +226,81 @@ div.emby-tabs[data-index="3"] {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-/*Watchlist Button Customisation*/
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.button-container .watchlist-button:hover {
+  color: rgba(128, 128, 128, 1); 
+}
+
+/* Watchlist button – remove all backgrounds / shadows in all states */
 .button-container .watchlist-button,
 .button-container .watchlist-button:focus,
 .button-container .watchlist-button:active,
 .button-container .watchlist-button:hover,
 .button-container .watchlist-button[data-active="true"],
 .button-container .watchlist-button.selected {
-    background: none !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-}
-
-/* If the icon itself has a background (e.g., SVG or span inside) */
-.button-container .watchlist-button * {
-    background: none !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-}
-
-.button-container .watchlist-button::before,
-.button-container .watchlist-button::after {
-  content: none !important;
   background: none !important;
+  background-color: transparent !important;
   box-shadow: none !important;
   border: none !important;
 }
 
-  /* Inherit or override styles for visual consistency */
-  border: none;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-/*Customising the Media Bar Buttons*/
-.button-container .favorite-button {
-  background: transparent !important;
-  border-radius: 50%;
-  color: #ffffff !important; /* White heart */
-  transition: background-color 0.3s ease;
-}
-.button-container .favorite-button:hover {
-  background: rgba(128, 128, 128, 0.3);
-}
-
-/*Text colour for age rating*/
+/* Text colour for age rating pill */
 .age-rating {
-    color: #ffffff;
+  color: #ffffff;
 }
 
-/*Fixes the header on 10.11*/
+/*Adjusts pause button location*/
+.pause-button {
+  transform: translateY(20px) !important; /* Moves it down regardless of positioning */
+}
+
+/* Lower the first card carousel under the media bar */
+.verticalSection.ContinueWatchingNextUp.section0.emby-scroller-container {
+  margin-top: 2.5rem !important;  /* tweak: 2rem–4rem to taste */
+}
+
+
+/* Fixes the header on 10.11 (slides container) */
 #slides-container {
-    position: static;
-    width: 100vw;
-    height: 90%;
-    overflow: hidden;
-    margin: 0 auto;
+  position: static;
+  width: 100vw;
+  height: 90%;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
-/*PLAYBACK CONTROLS*/
+
+/* ============================================================
+   5. PLAYBACK CONTROLS – PROGRESS BAR, BUTTONS, LAYOUT
+   - Hide chapter markers
+   - Keep OSD row horizontal
+   - Card overlay & primary play button position/size
+   ============================================================ */
+
 /* Hide chapter markers on playback progress bar */
 .sliderMarker {
   display: none !important;
 }
-/* Keep the overall container horizontal */
+
+/* Keep the OSD controls inner row horizontal */
 .osdControls > div.flex.flex-direction-row {
   display: flex !important;
-  flex-direction: row !important; /* Maintain horizontal layout */
+  flex-direction: row !important;
   align-items: center;
   gap: 0.5rem !important;
 }
-/* Ensure the card element is relatively positioned */
-.card, .itemActionCard, .anyCardContainerClass {
+
+/* Ensure card is relatively positioned for overlays */
+.card,
+.itemActionCard,
+.anyCardContainerClass {
   position: relative !important;
 }
-/* Make the overlay cover the entire card */
-.cardOverlayContainer {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  pointer-events: none; /* Overlay doesn't block clicks unless you want it to */
-  z-index: 1;
-}
 
-/*ADJUSTING THE LOCATION AND COLOUR OF THE PLAY BUTTON ON THE CARDS*/
-/* Center the play/resume button */
-.cardOverlayFab-primary {
-  position: absolute !important;
-  left: 50% !important;
-  top: 50% !important;
-  transform: translate(-50%, -50%) scale(1) !important;
-  z-index: 2;
-  pointer-events: auto;
-  transition: transform 0.15s cubic-bezier(.4,0,.2,1);
-
-  width: 40px !important;          /* Doubled from 20px */
-  height: 40px !important;         /* Doubled from 20px */
-  min-width: 40px !important;
-  min-height: 40px !important;
-  border-radius: 50% !important;   /* Keep circular */
-}
-/* Grow on hover and focus */
-.cardOverlayFab-primary:hover,
-.cardOverlayFab-primary:focus {
-  transform: translate(-50%, -50%) scale(1.22) !important;
-  z-index: 3;
-}
-/* Enlarge the play icon inside */
-.cardOverlayFab-primary .cardOverlayButtonIcon {
-  color: #3b3b3b !important;
-  font-size: 24px !important;      /* Doubled from 12px */
-}
-/* Ensure the overlay covers the full card */
+/* Make the card overlay cover the entire card */
 .cardOverlayContainer {
   position: absolute !important;
   top: 0 !important;
@@ -267,35 +310,62 @@ div.emby-tabs[data-index="3"] {
   pointer-events: none;
   z-index: 1;
 }
-/* Ensure the card container is relatively positioned */
-.card, .itemActionCard, .anyCardContainerClass {
-  position: relative !important;
+
+/* Center the play/resume button on cards */
+.cardOverlayFab-primary {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) scale(1) !important;
+  z-index: 2;
+  pointer-events: auto;
+  transition: transform 0.15s cubic-bezier(.4, 0, .2, 1);
+
+  width: 40px !important;       /* Larger circular button */
+  height: 40px !important;
+  min-width: 40px !important;
+  min-height: 40px !important;
+  border-radius: 50% !important;
 }
 
+/* Grow on hover and focus */
+.cardOverlayFab-primary:hover,
+.cardOverlayFab-primary:focus {
+  transform: translate(-50%, -50%) scale(1.22) !important;
+  z-index: 3;
+}
+
+/* Play icon size inside overlay button (base colour then overridden below) */
 .cardOverlayFab-primary .cardOverlayButtonIcon {
-  color: rgba(255, 255, 255, 0.8) !important; /*Triangle colour*/
+  font-size: 24px !important;
 }
 
-/*CHANGES THE SIZE OF EPISODES ON SEASON PAGES*/
-/* Adjust episode card padding and height for balanced spacing with moderate bottom space */
+/* Final play icon colour override (triangle colour) */
+.cardOverlayFab-primary .cardOverlayButtonIcon {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+
+/* ============================================================
+   6. SEASON PAGE – EPISODE CARD SIZE & HOVER BEHAVIOUR
+   - Episode card padding / text sizing
+   - Play button sizing and hover-only visibility
+   ============================================================ */
+
+/* Adjust episode card padding & height for balanced spacing */
 .listItem.listItem-largeImage.listItem-withContentWrapper {
-  padding: 12px 12px 12px 12px !important; /* <-- Adjusted bottom padding to add more space below each episode */
-  min-height: auto !important;              /* Allow height to adjust naturally */
+  padding: 12px 12px 12px 12px !important;
+  min-height: auto !important;
   max-height: none !important;
 }
-/* Enlarge the thumbnail image */
-/*.listItemImage-large {
-  width: 220px !important;
-  height: 124px !important;
-  background-size: cover !important;
-  margin-right: 16px !important;
-}/
-/* Adjust play button size inside thumbnail */
+
+/* Enlarge play button inside episode thumbnail */
 .listItemImageButton {
   width: 30px !important;
   height: 30px !important;
 }
-/* Slightly increase episode title font size */
+
+/* Episode title font size */
 .listItemBodyText bdi {
   font-size: 17px !important;
   line-height: 1.3 !important;
@@ -304,11 +374,13 @@ div.emby-tabs[data-index="3"] {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
 /* Secondary info font size and spacing */
 .listItemMediaInfo.mediaInfoItem {
   font-size: 13px !important;
   margin-right: 10px !important;
 }
+
 /* Description overview with max 2 lines */
 .listItem-overview.listItemBodyText bdi p {
   font-size: 13px !important;
@@ -321,12 +393,14 @@ div.emby-tabs[data-index="3"] {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-/* User data buttons */
+
+/* User data buttons sizing */
 .listViewUserDataButtons .listItemButton {
   width: 28px !important;
   height: 28px !important;
   margin-left: 4px !important;
 }
+
 /* Bottom overview text */
 .listItem-bottomoverview bdi {
   font-size: 12px !important;
@@ -336,7 +410,8 @@ div.emby-tabs[data-index="3"] {
   white-space: nowrap;
 }
 
-/*FIXES ISSUE OF PLAY BUTTON ALWAYS VISIBLE ON EPISODES*/
+/* Fix issue of play button always visible on episodes */
+
 /* Hide play button by default */
 .listItemImageButton {
   opacity: 0;
@@ -344,30 +419,39 @@ div.emby-tabs[data-index="3"] {
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform: scale(1.3);
 }
-/* Show play button when hovering over card */
+
+/* Show play button when hovering over the episode card */
 .listItem.listItem-largeImage.listItem-withContentWrapper:hover .listItemImageButton {
   opacity: 1;
   pointer-events: auto;
 }
-/* Grow play button only when hovering over the button */
+
+/* Grow play button only when hovering the button itself */
 .listItemImageButton:hover {
   transform: scale(1.5);
 }
 
-/*CHANGES THE MARKED AS PLAYED*/
-/* Rounded corner background box behind the check mark */
+
+/* ============================================================
+   7. INDICATORS – PLAYED & COUNT
+   - Marked-as-played indicator box
+   - Count indicator styling
+   ============================================================ */
+
+/* Rounded corner background box behind the check mark (played) */
 .playedIndicator.indicator {
   background-color: rgba(15, 22, 36, 0.5) !important;
-  padding: 0 !important;                /* Remove padding for fixed size */
+  padding: 0 !important;
   border-radius: 6px !important;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 26px !important;               /* Fixed width */
-  height: 26px !important;              /* Fixed height */
+  width: 26px !important;
+  height: 26px !important;
   box-sizing: border-box;
 }
-/* Style the check mark icon */
+
+/* Check mark icon styling */
 .playedIndicator.indicator .indicatorIcon.check {
   color: rgba(0, 187, 119) !important;
   font-size: 18px !important;
@@ -375,15 +459,14 @@ div.emby-tabs[data-index="3"] {
   box-shadow: none !important;
   border: none !important;
   padding: 0 !important;
-  margin: auto;   /* Center the icon */
+  margin: auto;
 }
 
-/*CHANGES COUNT INDICATOR*/
-/* Style the count indicator circle like the played indicator */
+/* Count indicator styled similar to played indicator */
 .cardIndicators .countIndicator.indicator {
   background-color: rgba(15, 22, 36, 0.5) !important;
   color: rgba(255, 255, 255, 0.8) !important;
-  padding: 0 !important;                /* Remove padding for fixed size */
+  padding: 0 !important;
   border-radius: 6px !important;
   display: inline-flex;
   align-items: center;
@@ -396,73 +479,85 @@ div.emby-tabs[data-index="3"] {
   user-select: none;
 }
 
-/*CHANGES VERTICAL ORDER OF PLAYBACK BAR AND CONTROLS*/
-/* === OSD Controls Wrapper === */
+
+/* ============================================================
+   8. OSD VERTICAL ORDER – TIMELINE ABOVE CONTROLS
+   - Reorder timeline and controls vertically
+   - Remove extra spacing around elements
+   ============================================================ */
+
+/* OSD controls wrapper anchored at bottom */
 .osdControls {
-    position: relative !important;  /* anchor to bottom of player */
-    bottom: 0 !important;           /* stick at bottom edge */
-    left: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+  position: relative !important;
+  bottom: 0 !important;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 
-    /* 🔧 Edge Padding (adjust these as you like) */
-    padding: 20px 40px 0px 40px !important;
-    /* order: top | right | bottom | left
-       increase bottom padding if too close to edge
-       reduce top padding to bring bar lower */
+  /* Edge padding: top | right | bottom | left */
+  padding: 20px 40px 0px 40px !important;
 }
 
-/* === Timeline / seekbar row === */
+/* Timeline / seekbar row above buttons */
 .osdControls > .flex.flex-direction-row.align-items-center {
-    order: -1;              /* move above controls */
-    position: relative;
-    z-index: 5;
-
-    /* 🔧 Row gap under timeline */
-    margin-bottom: 0 !important;   /* set to e.g. 4px if you want a gap */
-    padding-bottom: 0 !important;
+  order: -1;         /* move above button row */
+  position: relative;
+  z-index: 5;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 
-/* === Button row (play/pause, volume, settings, etc.) === */
+/* Button row (play/pause, volume, etc.) */
 .osdControls > .buttons.focuscontainer-x {
-    order: 0;                /* sits below the slider row */
-    position: relative !important;
-    bottom: auto !important;
-    z-index: 1;
-
-    /* 🔧 Row gap above buttons */
-    margin-top: 0 !important;   /* set to e.g. 4px if you want a gap */
-    padding-top: 0 !important;
+  order: 0;          /* sits below the slider row */
+  position: relative !important;
+  bottom: auto !important;
+  z-index: 1;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
 
-/* === Extra tweak: remove unintended spacing in sub-elements === */
+/* Remove unintended spacing inside OSD elements */
 .osdControls .sliderContainer,
 .osdControls .osdTextContainer {
-    margin: 0 !important;
-    padding: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/*Hide the "Trailers" tab in Movies*/
-.mainDrawer:has(.navMenuOption-selected[href^="#/movies.html"]) + .skinHeader .emby-tab-button[data-index="2"] {
-display: none !important;
+
+/* ============================================================
+   9. NAVIGATION TWEAKS – TABS
+   - Hide “Trailers” tab in Movies
+   ============================================================ */
+
+/* Hide the "Trailers" tab on Movies views */
+.mainDrawer:has(.navMenuOption-selected[href^="#/movies.html"])
+  + .skinHeader
+  .emby-tab-button[data-index="2"] {
+  display: none !important;
 }
 
-/*SKIP BUTTON*/
-/* Base button */
+
+/* ============================================================
+   10. SKIP BUTTON (INTRO / RECAP)
+   - Background & hover
+   - Text and icon colour
+   ============================================================ */
+
+/* Base skip button */
 .skip-button {
-    background-color: rgba(255, 255, 255, 0.8) !important;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(0, 0, 0, 0.8) !important;        /* Text colour */
 }
+
 /* Hover state */
 .skip-button:hover {
-    background-color: rgba(255, 255, 255, 1) !important; 
+  background-color: rgba(255, 255, 255, 1) !important;
 }
-/* Text inside the skip button */
-.skip-button {
-    color: rgba(0, 0, 0, 0.8) !important;              /* text color */
-}
+
 /* Icon inside the skip button */
 .skip-button .material-icons {
-    color: rgba(0, 0, 0, 0.8) !important;              /* icon color */
+  color: rgba(0, 0, 0, 0.8) !important;        /* Icon colour */
 }
