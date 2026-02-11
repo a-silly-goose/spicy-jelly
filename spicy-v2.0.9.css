@@ -435,14 +435,14 @@ div.emby-tabs[data-index="3"] {
 }
 
 /* Fixes Episodes On Series Page in KefinTweaks */
-.emby-scroller-container {
+#itemDetailPage .emby-scroller-container {
     padding: 0 2em;           /* Creates space to hide scroll edges */
     overflow: hidden;
     width: 390%;
     order: 2;
 
 }
-.scrollX {
+#itemDetailPage .scrollX {
     width: calc(100% + 4em);  /* Wider than container by padding amount */
     margin: 0 -2em;           /* Negative margin = exactly padding width */
     overflow-x: auto;
