@@ -467,12 +467,12 @@ div.emby-tabs[data-index="3"] {
   order: 3;
 }
 
-/* Fix Season folders */
+/* Fix Season folders 
 .detailSection>#listChildrenCollapsible {
     display: grid;
     align-content: end;
     grid-column: 1 / -1;
-}
+} */
 
 /* ============================================================
    7. INDICATORS – PLAYED & COUNT
