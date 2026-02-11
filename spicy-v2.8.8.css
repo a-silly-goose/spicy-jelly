@@ -435,15 +435,19 @@ div.emby-tabs[data-index="3"] {
 }
 
 /* Fixes Episodes On Series Page in KefinTweaks */
-#itemDetailPage .emby-scroller-container {
+.emby-scroller-container {
     padding: 0 2em;           /* Creates space to hide scroll edges */
     overflow: hidden;
     width: 390%;
+    order: 2;
+
 }
-#itemDetailPage .scrollX {
+.scrollX {
     width: calc(100% + 4em);  /* Wider than container by padding amount */
     margin: 0 -2em;           /* Negative margin = exactly padding width */
     overflow-x: auto;
+    display: grid;
+    align-content: end;
 }
 
 /* Distance between Episode Carousel and Genre Info */
@@ -456,6 +460,18 @@ div.emby-tabs[data-index="3"] {
 /* Fixes Season text being overlapped by show logo */
 * .subtitle {
     padding-bottom: 0 !important;
+}
+
+/* Put desc above episode carousel*/
+.itemDetailsGroup {
+  order: 3;
+}
+
+/* Fix Season folders */
+.detailSection>#listChildrenCollapsible {
+    display: grid;
+    align-content: end;
+    grid-column: 1 / -1;
 }
 
 /* ============================================================
