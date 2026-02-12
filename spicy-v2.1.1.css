@@ -471,7 +471,9 @@ div.emby-tabs[data-index="3"] {
 .trackSelections {
   order: 4;
 }
-
+.detailSectionContent {
+  order: 0;
+}
 /* Fix Season folders 
 .detailSection>#listChildrenCollapsible {
     display: grid;
