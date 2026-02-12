@@ -3,6 +3,7 @@
 /* ElegantFin Theme LATEST for Jellyfin by lscambo13 */
 @import url("https://cdn.jsdelivr.net/gh/lscambo13/ElegantFin@main/Theme/ElegantFin-jellyfin-theme-build-latest-minified.css");
 
+
 /* ============================================================
    CUSTOM CSS – SPICY JELLY (ELEGANTFIN ADD-ONS ONLY)
    ============================================================ */
@@ -112,6 +113,7 @@ div.emby-tabs[data-index="3"] {
    - Age rating colour
    - Header fix for specific version
    ============================================================ */
+
 
 /* Adjusts media bar backdrop gradient/mask */
 .backdrop-container {
@@ -466,6 +468,9 @@ div.emby-tabs[data-index="3"] {
 .itemDetailsGroup {
   order: 3;
 }
+.trackSelections {
+  order: 4;
+}
 
 /* Fix Season folders 
 .detailSection>#listChildrenCollapsible {
@@ -603,3 +608,5 @@ div.emby-tabs[data-index="3"] {
 .skip-button .material-icons {
   color: rgba(0, 0, 0, 0.8) !important;        /* Icon colour */
 }
+
+
