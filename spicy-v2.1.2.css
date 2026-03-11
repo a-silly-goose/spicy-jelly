@@ -112,7 +112,6 @@ div.emby-tabs[data-index="3"] {
    - Header fix for specific version
    ============================================================ */
 
-
 /* Adjusts media bar backdrop gradient/mask */
 .backdrop-container {
   position: absolute;
@@ -276,6 +275,10 @@ div.emby-tabs[data-index="3"] {
   margin: 0 auto;
 }
 
+.separator-icon {
+    font-size: 10px;
+    color: #ffffff !important; 
+}
 
 /* ============================================================
    5. PLAYBACK CONTROLS – PROGRESS BAR, BUTTONS, LAYOUT
