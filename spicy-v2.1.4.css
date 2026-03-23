@@ -59,9 +59,9 @@ a.navMenuOption[href="#/home"] {
 }
 
 /* Custom Links after JellyfinEnhanced Section */
-.customMenuOptions {
+/*.customMenuOptions {
     order: 1;
-}
+}*/
 
 /* Library Section */
 .libraryMenuOptions {
@@ -78,13 +78,13 @@ a.navMenuOption[href="#/home"] {
     order: 4;
 }
 
-/* Rest of the sections follow */
-
-.adminMenuOptions {
+/* User Settings Section */
+.userMenuOptions {
     order: 5;
 }
 
-.userMenuOptions {
+/* Admin Settings Section */
+.adminMenuOptions {
     order: 6;
 }
 
