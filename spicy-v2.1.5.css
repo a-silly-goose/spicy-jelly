@@ -140,11 +140,11 @@ imgLogoIcon {
   background-image: var(--customlogo) !important;
 }
 
-/* Hide Home / Fav header buttons */
+/* Hide Home / Fav header buttons 
 div[is="emby-tabs"][data-index="0"],
 div.emby-tabs[data-index="3"] {
   display: none !important;
-}
+} */
 
 
 /* ============================================================
