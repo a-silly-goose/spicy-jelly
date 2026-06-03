@@ -146,6 +146,18 @@ div.emby-tabs[data-index="3"] {
   display: none !important;
 } 
 
+/*Change icon for current streams*/
+i.material-icons.je-as-icon {
+  visibility: hidden;
+  position: relative;
+}
+
+i.material-icons.je-as-icon::before {
+  content: 'vital_signs';
+  visibility: visible;
+  position: absolute;
+  left: 0;
+}
 
 /* ============================================================
    3. MISC GLOBAL TWEAKS
