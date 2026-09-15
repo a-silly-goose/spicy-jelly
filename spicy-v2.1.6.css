@@ -6,6 +6,18 @@
    CUSTOM CSS – SPICY JELLY (ELEGANTFIN ADD-ONS ONLY)
    ============================================================ */
 
+/* TEMP JF12 FIXES */
+.homeSectionsContainer {
+    position: relative;
+    top: 73vh;
+    z-index: 6;
+}
+
+.MuiButton-colorPrimary, .button-submit, .upNextContainer .btnStartNow {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: solid rgba(255, 255, 255, 0.7) var(--borderWidth) !important;
+    color: #fff !important;
+}
 
 /* ============================================================
    1. COLOURS & GLOBAL THEME OVERRIDES
