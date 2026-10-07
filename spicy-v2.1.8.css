@@ -569,27 +569,66 @@ i.material-icons.je-as-icon::before {
    - Count indicator styling
    ============================================================ */
 
-/* Rounded corner background box behind the check mark (played) */
-.playedIndicator.indicator {
-  background-color: rgba(15, 22, 36, 0.5) !important;
-  padding: 0 !important;
-  border-radius: 6px !important;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px !important;
-  height: 26px !important;
-  box-sizing: border-box;
+/* Jellyfin 12 library card pages can redraw the watched indicator with a different DOM tree.
+   We force the green state here so it no longer falls back to the default black icon. */
+:root {
+  --played-indicator-green: rgb(0, 187, 119);
+  --played-indicator-bg: rgba(15, 22, 36, 0.5);
 }
 
-/* Check mark icon styling */
-.playedIndicator.indicator .indicatorIcon.check {
-  color: rgba(0, 187, 119) !important;
-  font-size: 18px !important;
-  background: none !important;
+.playedIndicator.indicator,
+.cardIndicators .playedIndicator,
+.cardContent .playedIndicator,
+.cardBox .playedIndicator,
+.itemActionCard .playedIndicator,
+.listItem .playedIndicator {
+  background-color: var(--played-indicator-bg) !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 26px !important;
+  height: 26px !important;
+  box-sizing: border-box !important;
+}
+
+.playedIndicator.indicator .indicatorIcon,
+.playedIndicator.indicator .material-icons,
+.playedIndicator.indicator .material-symbols-outlined,
+.playedIndicator.indicator i,
+.playedIndicator.indicator svg,
+.playedIndicator.indicator .icon,
+.cardIndicators .playedIndicator .indicatorIcon,
+.cardIndicators .playedIndicator .material-icons,
+.cardIndicators .playedIndicator .material-symbols-outlined,
+.cardIndicators .playedIndicator i,
+.cardIndicators .playedIndicator svg,
+.cardContent .playedIndicator .indicatorIcon,
+.cardContent .playedIndicator .material-icons,
+.cardContent .playedIndicator svg,
+.libraryPage .playedIndicator .indicatorIcon,
+.libraryPage .playedIndicator .material-icons,
+.libraryPage .playedIndicator svg {
+  color: var(--played-indicator-green) !important;
+  fill: var(--played-indicator-green) !important;
+  background: transparent !important;
   box-shadow: none !important;
   border: none !important;
-  padding: 0 !important;
+  text-shadow: none !important;
+  font-size: 18px !important;
+}
+
+.playedIndicator.indicator .indicatorIcon.check,
+.playedIndicator.indicator .material-icons.check,
+.playedIndicator.indicator .material-symbols-outlined.check,
+.cardIndicators .playedIndicator .indicatorIcon.check,
+.libraryPage .playedIndicator .indicatorIcon.check {
+  color: var(--played-indicator-green) !important;
+  fill: var(--played-indicator-green) !important;
+  background: transparent !important;
   margin: auto;
 }
 
@@ -610,6 +649,23 @@ i.material-icons.je-as-icon::before {
   user-select: none;
 }
 
+/* Legacy rule kept for compatibility with older layouts */
+.playedIndicator.indicator .indicatorIcon.check {
+  color: var(--played-indicator-green) !important;
+  font-size: 18px !important;
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: auto;
+}
+
+/* Keep the icon from inheriting a black fallback from library card styling */
+.libraryPage .playedIndicator,
+.libraryPage .playedIndicator * {
+  color: var(--played-indicator-green) !important;
+  fill: var(--played-indicator-green) !important;
+}
 
 /* ============================================================
    8. OSD VERTICAL ORDER – TIMELINE ABOVE CONTROLS
@@ -691,6 +747,132 @@ i.material-icons.je-as-icon::before {
 /* Icon inside the skip button */
 .skip-button .material-icons {
   color: rgba(0, 0, 0, 0.8) !important;        /* Icon colour */
+}
+
+/* ============================================================
+   MULTI-SELECT / COMMAND PANEL – FIX FOR JELLYFIN 12
+   - Selection banner background and icon colours
+   ============================================================ */
+
+/* Jellyfin 12 can render the multi-item command bar with a different panel class.
+   This keeps the panel readable and ensures the icons/text aren't black-on-dark. */
+.sectionsCommandPanel,
+.selectionCommandsPanel,
+.itemSelectionCommandsPanel,
+.multiSelectCommandPanel,
+[class*="sectionsCommandPanel"],
+[class*="SelectionCommandsPanel"],
+[class*="ItemSelectionCommandsPanel"] {
+  background: rgba(24, 24, 24, 0.88) !important;
+  background-color: rgba(24, 24, 24, 0.88) !important;
+  border: var(--defaultBorder, 1px solid rgba(255,255,255,0.12)) !important;
+  color: #fff !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.sectionsCommandPanel .material-icons,
+.sectionsCommandPanel .icon,
+.sectionsCommandPanel svg,
+.sectionsCommandPanel .emby-button,
+.sectionsCommandPanel .button-flat,
+.sectionsCommandPanel .paper-icon-button-light,
+.sectionsCommandPanel .listItemBodyText,
+.sectionsCommandPanel *,
+.selectionCommandsPanel .material-icons,
+.selectionCommandsPanel .icon,
+.selectionCommandsPanel svg,
+.selectionCommandsPanel .emby-button,
+.selectionCommandsPanel .button-flat,
+.selectionCommandsPanel .paper-icon-button-light,
+.selectionCommandsPanel .listItemBodyText,
+.selectionCommandsPanel *,
+.itemSelectionCommandsPanel .material-icons,
+.itemSelectionCommandsPanel .icon,
+.itemSelectionCommandsPanel svg,
+.itemSelectionCommandsPanel .emby-button,
+.itemSelectionCommandsPanel .button-flat,
+.itemSelectionCommandsPanel .paper-icon-button-light,
+.itemSelectionCommandsPanel .listItemBodyText,
+.itemSelectionCommandsPanel *,
+.multiSelectCommandPanel .material-icons,
+.multiSelectCommandPanel .icon,
+.multiSelectCommandPanel svg,
+.multiSelectCommandPanel .emby-button,
+.multiSelectCommandPanel .button-flat,
+.multiSelectCommandPanel .paper-icon-button-light,
+.multiSelectCommandPanel .listItemBodyText,
+.multiSelectCommandPanel * {
+  color: #fff !important;
+  fill: #fff !important;
+  stroke: #fff !important;
+  text-shadow: none !important;
+}
+
+.sectionsCommandPanel .material-icons::before,
+.selectionCommandsPanel .material-icons::before,
+.itemSelectionCommandsPanel .material-icons::before,
+.multiSelectCommandPanel .material-icons::before {
+  color: #fff !important;
+}
+
+/* Keep the lower options list/buttons from inheriting a dark icon color inside the panel */
+.sectionsCommandPanel .button-submit,
+.selectionCommandsPanel .button-submit,
+.itemSelectionCommandsPanel .button-submit,
+.multiSelectCommandPanel .button-submit,
+.sectionsCommandPanel .btn,
+.selectionCommandsPanel .btn,
+.itemSelectionCommandsPanel .btn,
+.multiSelectCommandPanel .btn {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: solid rgba(255, 255, 255, 0.7) var(--borderWidth) !important;
+}
+
+/* ============================================================
+   8. OSD VERTICAL ORDER – TIMELINE ABOVE CONTROLS
+   - Reorder timeline and controls vertically
+   - Remove extra spacing around elements
+   ============================================================ */
+
+/* OSD controls wrapper anchored at bottom */
+.osdControls {
+  position: relative !important;
+  bottom: 0 !important;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  /* Edge padding: top | right | bottom | left */
+  padding: 20px 40px 0px 40px !important;
+}
+
+/* Timeline / seekbar row above buttons */
+.osdControls > .flex.flex-direction-row.align-items-center {
+  order: -1;         /* move above button row */
+  position: relative;
+  z-index: 5;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Button row (play/pause, volume, etc.) */
+.osdControls > .buttons.focuscontainer-x {
+  order: 0;          /* sits below the slider row */
+  position: relative !important;
+  bottom: auto !important;
+  z-index: 1;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Remove unintended spacing inside OSD elements */
+.osdControls .sliderContainer,
+.osdControls .osdTextContainer {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 
